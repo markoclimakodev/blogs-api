@@ -5,5 +5,6 @@ const validateUserRegister = require('../middlewares/validateUserRegister');
 
 route.post('/', validateUserRegister, userController.userRegistration);
 route.get('/', jwtTokenValidate, userController.getAllUsers);
+route.get('/:id', jwtTokenValidate, userController.getUserById);
 
 module.exports = route;
