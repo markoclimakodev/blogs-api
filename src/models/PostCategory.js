@@ -6,8 +6,8 @@ const PostCategoryModel = (sequelize,Datatypes) => {
     },
     {
       tableName: 'posts_categories',
-      underscored: true
-
+      underscored: true,
+      timestamps: false
     }
   )
 
@@ -15,14 +15,14 @@ const PostCategoryModel = (sequelize,Datatypes) => {
     models.BlogPost.belongsToMany(models.Category, {
       foreignKey: 'postId',
       otherKey: 'categoryId',
-      as: 'blogPostCategories',
+      as: 'categories',
       through: PostCategory,
     });
 
     models.Category.belongsToMany(models.BlogPost, {
       foreignKey: 'categoryId',
       otherKey: 'postId',
-      as: 'categoryBlogPosts',
+      as: 'posts',
       through: PostCategory,
     });
   }
