@@ -12,4 +12,4 @@ const userRegister = async (req, res) => {
   res.status(201).json({ token });
 };
 
-module.exports = userRegister;
+module.exports = { userRegister };
