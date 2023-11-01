@@ -12,6 +12,13 @@ const userRegistration = async (req, res) => {
   return res.status(201).json({ token });
 };
 
+const getAllUsers = async (req, res) => {
+  const users = await userService.getAllUsers();
+
+  return res.status(200).json(users);
+};
+
 module.exports = {
   userRegistration,
+  getAllUsers,
 };
